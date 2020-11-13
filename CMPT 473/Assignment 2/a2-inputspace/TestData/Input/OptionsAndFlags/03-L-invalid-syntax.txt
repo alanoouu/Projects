@@ -1,0 +1,1 @@
+--arrays --remove-empty-objects --remove-empty-strings -d : -D . --boolean headerBoolean --numeric headerNumeric --out-dir ./TestData/Output/Files --out-name '{header1}'

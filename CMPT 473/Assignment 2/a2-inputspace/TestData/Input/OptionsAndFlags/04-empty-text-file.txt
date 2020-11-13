@@ -1,0 +1,3 @@
+--remove-empty-objects -D '.'
+--boolean 'noNexistentColumn'
+--out-dir ./TestData/Output/Files

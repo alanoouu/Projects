@@ -1,0 +1,6 @@
+error: The argument '--in <FILE>' was provided more than once, but cannot be used multiple times
+
+USAGE:
+    csv2json --arrays --delimiter <DELIMITER> --dimensional-separator <SEPARATOR> --in <FILE> --out-dir <DIR> --out-name <TEMPLATE> --remove-empty-strings
+
+For more information try --help

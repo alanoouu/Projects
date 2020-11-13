@@ -1,0 +1,1 @@
+--in ./TestData/Inputs/Files/20/20.csv --in ./TestData/Inputs/Resources/20/20-1.csv --remove-empty-objects -d : --out-dir ./TestData/Output/Files --out-name '{header1}'

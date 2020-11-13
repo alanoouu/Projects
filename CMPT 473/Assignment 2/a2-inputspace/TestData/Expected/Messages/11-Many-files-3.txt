@@ -1,0 +1,6 @@
+error: The argument '--in <FILE>' was provided more than once, but cannot be used multiple times
+
+USAGE:
+    csv2json --boolean <COLUMN>... --delimiter <DELIMITER> --dimensional-separator <SEPARATOR> --in <FILE> --numeric <COLUMN>...
+
+For more information try --help

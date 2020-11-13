@@ -1,0 +1,206 @@
+#!/bin/zsh
+
+#  libtest.sh
+#  Assignment2
+#
+#  Created by admin on 2020-02-06.
+#  Copyright © 2020 Maxim Puchkov. All rights reserved.
+
+
+src_lib=$_
+src_dir=${0%/*}
+src_file=$src_dir/testharness
+shprocess=($( ps -o comm -p $$ ))
+
+
+#MARK: - Text Formatting
+function red()          { echo "$(tput setaf 1)$@$(tput sgr0)"; } # fg
+function green()        { echo "$(tput setaf 2)$@$(tput sgr0)"; }
+function yellow()       { echo "$(tput setaf 3)$@$(tput sgr0)"; }
+function blue()         { echo "$(tput setaf 4)$@$(tput sgr0)"; }
+function cyan()         { echo "$(tput setaf 6)$@$(tput sgr0)"; }
+function grey()         { echo "$(tput setaf 7)$@$(tput sgr0)"; }
+function redbg()        { echo "$(tput setab 1)$@$(tput sgr0)"; } # bg
+function greenbg()      { echo "$(tput setab 2)$@$(tput sgr0)"; }
+function underline()    { echo "$(tput smul)$@$(tput sgr0)";    } # styles
+
+    
+#MARK: - Helper Functions
+# Execute a command given its name and optional arguments
+function _do_command() {
+    cmd="$1"
+    args=(${@:2})
+    $cmd ${args[@]}
+    code=$?
+    executed_commands+=("$code \t\t $cmd ${args[@]}")
+    return $code
+}
+# Silence stdout and stderr
+function _quiet() {
+    "$@" &> /dev/null
+    return $?
+}
+# Print code on exit
+function _exit() {
+    \echo "TestHarness exited with code $1."
+    \exit "$1"
+}
+
+# File.ext
+function _file() {
+    local _f=$( basename $1 )
+    echo "$_f"
+}
+# File
+function _filename() {
+    local _fn=$( _file $1 )
+    _fn="${_fn%.*}"
+    echo "$_fn"
+}
+# ext
+function _fileext() {
+    local _e=${1##*.}
+    echo "$_e"
+}
+# /dir
+function _filedir() {
+    echo "$( dirname $1 )"
+}
+# Brief description
+function _fileinfo() {
+    local _f=$1
+    if [[ ! -e $_f ]]; then
+        echo "# File not found #"
+        return 1
+    fi
+    echo "$( file -b $_f )"
+    return 0
+}
+
+
+#MARK: - Validate
+# Exit-1 if TestData not found
+function _validate_data() {
+    printf "$BR TestData:    \t"
+    if [[ ! -e $TEST_DATA_DIR ]]; then
+        echo "$(red 'TestData directory not found:') '$TEST_DATA_DIR'"
+#        echo "To use TestHarness with default settings,"
+#        echo "run it from Project's root directory:"
+#        echo "$BR" "zsh bin/testharness"
+#        echo "Otherwise use:"
+#        echo "$BR" "zsh testharness /path/to/TestData"
+        print_usage
+        echo
+        _exit 1
+    fi
+    echo "OK"
+}
+# Exit-1 if TestData does not contain Input directory
+function _validate_input_files() {
+    printf "$BR Input files:    \t"
+    if [[ ! -e $input_files_dir ]]; then
+        echo "$(red 'Input files not found:') '$input_files_dir'"
+        echo
+        _exit 1
+    fi
+    echo "OK"
+}
+# Exit-* if test program not found
+function _validate_program() {
+    printf "$BR Program: \t"
+    run_test_program >/dev/null 2>&1
+    code=$? # should return 1
+    if [[ $code -gt 1 ]]; then
+        case $code in
+            126) echo "$(red 'Invalid program binary')"
+                 ;;
+            127) echo "$(red 'Program not found:' $TEST_PROGRAM)"
+                 echo "Your PATH: $PATH"
+                 ;;
+            *)   echo "$(red 'Unknown error')"
+                 ;;
+        esac
+        echo
+        _exit $code
+    fi
+    echo "OK"
+}
+
+
+#MARK: Command diff
+function _do_diff() {
+    local diff_options=( '--text'
+                         '--unidirectional-new-file'
+                         '--strip-trailing-cr' )
+    _do_command diff ${diff_options[@]} "$@"    # 2&>/dev/null
+    return $?
+}
+function _set_diff_paths() {
+    kind=${1:=Files}
+    exp=$exp_dir/$kind
+    out=$out_dir/$kind
+}
+# Check two documents
+function _is_diff() {
+    _set_diff_paths "$2"
+    _do_diff '--brief' $exp/$1 $out/$1
+    return $?
+}
+function _is_diff_file() {
+    _is_diff "$1" "Files"
+    return $?
+}
+function _is_diff_msg() {
+    _is_diff "$1" "Messages"
+    return $?
+}
+# Show differences
+function _diff_content() {
+    _set_diff_paths $2
+    _do_diff '--side-by-side' $exp/$1 $out/$1
+    return $?
+}
+function _diff_file_content() {
+    _diff_content "$1" "Files"
+    return $?
+}
+function _diff_msg_content() {
+    _diff_content "$1" "Messages"
+    return $?
+}
+
+
+
+
+#MARK: - Settings
+if [[ $shprocess =~ 'zsh' ]]; then
+    # zsh
+    function listjobs() {
+        j=$jobstates
+        echo "$j" | grep -E '[0-9]+' -o
+    }
+    function countjobs() {
+        echo "${#jobstates}"
+    }
+elif [[ $shprocess =~ 'bash' ]]; then
+    # bash
+    echo "$(yellow 'Recommended shell is zsh.')"
+    function listjobs() {
+        echo "$( jobs -r )"
+    }
+    function countjobs() {
+        n=($( jobs -p ))
+        echo ${#n[*]}
+    }
+else
+    # sh
+    echo "$(yellow 'Unknown shell.')"
+    #_exit 1
+fi
+
+
+
+if [[ ! ($src_lib == $0 || $src_file == $0) ]]; then
+    echo "Run '$(cyan 'testharness')' script."
+    _exit 1
+fi

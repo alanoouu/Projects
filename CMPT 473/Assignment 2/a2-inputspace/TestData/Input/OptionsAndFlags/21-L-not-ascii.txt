@@ -1,0 +1,1 @@
+--arrays --remove-empty-objects -d ';;-;;' --out-dir ./TestData/Output/Files -D .
