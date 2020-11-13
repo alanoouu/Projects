@@ -1,4 +1,0 @@
-header1Boolean#header2Numeric#header3@subfield3@subobject3#header3@subfield4#header3@subfield4@nestedObject5#header6@1#header6@2#header7
-"true"#12@687#"Hη "#"G"#" A  κQεηKQ"#"VχB""Wε"#"υ"#""#
-"false"#10@213##" BβK GψS"##"Xςπ"#"Gρη
-Lξιβ A"#"βξUY"

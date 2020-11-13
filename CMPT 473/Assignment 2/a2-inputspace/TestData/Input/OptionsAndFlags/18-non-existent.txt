@@ -1,1 +1,0 @@
---in ./TestData/Input/Files/no_file --remove-empty-strings

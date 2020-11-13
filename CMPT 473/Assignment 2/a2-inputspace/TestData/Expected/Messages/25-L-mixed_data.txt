@@ -1,4 +1,0 @@
-Writing to ./TestData/Output/Files/JUL,Iλ υ.json
-Writing to ./TestData/Output/Files/ηZ νD.json
-Writing to ./TestData/Output/Files/βPJφ.json
-Writing to ./TestData/Output/Files/πGε.json

@@ -1,1 +1,0 @@
---arrays --remove-empty-objects --remove-empty-strings -d '#' -D '@' --boolean 'header1Boolean' 'subobject3' --numeric 'header2Numeric' --out-dir . --out-name '{header3.subfield4}'

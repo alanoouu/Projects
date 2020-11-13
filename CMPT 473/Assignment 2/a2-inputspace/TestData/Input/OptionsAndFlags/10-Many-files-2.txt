@@ -1,1 +1,0 @@
---in ./TestData/Inputs/Files/10/10.csv --in ./TestData/Inputs/Resources/10/10-1.csv -D '&'

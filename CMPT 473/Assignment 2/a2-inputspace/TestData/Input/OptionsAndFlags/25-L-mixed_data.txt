@@ -1,1 +1,0 @@
---remove-empty-objects --remove-empty-strings --out-dir ./TestData/Output/Files --out-name '{header1}' -d :

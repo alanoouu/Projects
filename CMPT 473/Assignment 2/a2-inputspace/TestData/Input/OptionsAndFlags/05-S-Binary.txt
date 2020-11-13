@@ -1,2 +1,0 @@
---remove-empty-strings -d ':' --numeric 'nonExistentColumn'
---out-dir ./TestData/Output/Files --out-name '{nonExistentColumn}'
