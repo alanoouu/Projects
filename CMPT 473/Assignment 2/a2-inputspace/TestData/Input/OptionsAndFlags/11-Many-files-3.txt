@@ -1,0 +1,1 @@
+--in ./TestData/Inputs/Files/11/11.csv --in ./TestData/Inputs/Resources/11/11-1.csv -D . --boolean header1 --numeric header2

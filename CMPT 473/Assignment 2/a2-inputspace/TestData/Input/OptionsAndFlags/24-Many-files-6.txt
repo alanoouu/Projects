@@ -1,0 +1,1 @@
+--in ./TestData/Inputs/Files/24.csv --in ./TestData/Inputs/Resources/24/24-1.csv -D . --remove-empty-objects --numeric header2Numeric --out-dir ./TestData/Output/Files --out-name '{header1}'

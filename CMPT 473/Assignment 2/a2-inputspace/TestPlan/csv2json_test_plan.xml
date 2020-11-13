@@ -1,0 +1,1201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<System name="csv2json_test_plan">
+  <Parameters>
+    <Parameter id="0" name="input_file_type" type="1">
+      <values>
+        <value>plaintext</value>
+        <value>non_plaintext</value>
+        <value>multiple</value>
+        <value>directory</value>
+        <value>non_existent</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="2" name="input_file_size" type="1">
+      <values>
+        <value>small</value>
+        <value>medium</value>
+        <value>large</value>
+        <value>none</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="3" name="csv_syntax_is_valid" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="4" name="records_contain_same_number_of_fields" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="5" name="record_contains_trailing_comma" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="7" name="record_field_contains_space" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="8" name="record_field_escaped" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="9" name="record_field_contains_comma" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="10" name="record_field_contains_new_line" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="11" name="record_field_contains_double_quotes" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="12" name="contents_contain_arrays" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="13" name="contents_contain_empty_objects" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="14" name="contents_contain_empty_strings" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="15" name="contents_contain_nested_objects" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="16" name="delimited_by_specified_character" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="17" name="dimensionally_separated_by_specified_character" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="18" name="contents_empty" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="19" name="arrays_flag_set" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="20" name="remove_empty_objects_flag_set" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="21" name="remove_empty_strings_flag_set" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="22" name="output_directory_specified" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="23" name="output_template_name_specified" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="24" name="dimensional_separator_specified" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="25" name="delimiter_character_specified" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="26" name="boolean_columns_specified" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="27" name="numeric_columns_specified" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="28" name="output_redirected" type="1">
+      <values>
+        <value>to_standard_output</value>
+        <value>to_file</value>
+        <value>to_command</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="29" name="record_field_data" type="1">
+      <values>
+        <value>only_ascii</value>
+        <value>only_non_ascii</value>
+        <value>contains_both</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+  </Parameters>
+  <OutputParameters />
+  <Relations />
+  <Constraints>
+    <Constraint text="(records_contain_same_number_of_fields = true) =&gt; (csv_syntax_is_valid = true)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="records_contain_same_number_of_fields" />
+        <Parameter name="csv_syntax_is_valid" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(record_contains_trailing_comma = true) =&gt; (csv_syntax_is_valid = true)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="record_contains_trailing_comma" />
+        <Parameter name="csv_syntax_is_valid" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(csv_syntax_is_valid = true) =&gt; (contents_empty = false)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="csv_syntax_is_valid" />
+        <Parameter name="contents_empty" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(record_field_contains_space = true) =&gt; (csv_syntax_is_valid = true)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="record_field_contains_space" />
+        <Parameter name="csv_syntax_is_valid" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(record_field_escaped = true) =&gt; (csv_syntax_is_valid = true)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="record_field_escaped" />
+        <Parameter name="csv_syntax_is_valid" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(record_field_contains_comma = true) =&gt; (record_field_escaped = true)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="record_field_contains_comma" />
+        <Parameter name="record_field_escaped" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(record_field_contains_new_line = true) =&gt; (record_field_escaped = true)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="record_field_contains_new_line" />
+        <Parameter name="record_field_escaped" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(record_field_contains_double_quotes = true) =&gt; (record_field_escaped = true)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="record_field_contains_double_quotes" />
+        <Parameter name="record_field_escaped" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(input_file_type = &quot;non_existent&quot;) =&gt; (contents_empty = true)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="input_file_type" />
+        <Parameter name="contents_empty" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(input_file_type = &quot;non_existent&quot;) =&gt; (input_file_size = &quot;none&quot;)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="input_file_type" />
+        <Parameter name="input_file_size" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(input_file_type = &quot;directory&quot;) =&gt; (csv_syntax_is_valid = false)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="input_file_type" />
+        <Parameter name="csv_syntax_is_valid" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(input_file_type = &quot;non_plaintext&quot;) =&gt; (csv_syntax_is_valid = false)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="input_file_type" />
+        <Parameter name="csv_syntax_is_valid" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(input_file_size = &quot;none&quot;) =&gt; (contents_empty = true)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="input_file_size" />
+        <Parameter name="contents_empty" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(delimited_by_specified_character = true) =&gt; (delimiter_character_specified = true)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="delimited_by_specified_character" />
+        <Parameter name="delimiter_character_specified" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(delimited_by_specified_character = true) =&gt; (csv_syntax_is_valid = true)&#xD; ">
+      <Parameters>
+        <Parameter name="delimited_by_specified_character" />
+        <Parameter name="csv_syntax_is_valid" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(dimensionally_separated_by_specified_character = true) =&gt; (dimensional_separator_specified = true)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="dimensionally_separated_by_specified_character" />
+        <Parameter name="dimensional_separator_specified" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(dimensionally_separated_by_specified_character = true) =&gt; (csv_syntax_is_valid = true)&#xD;&#xA;">
+      <Parameters>
+        <Parameter name="dimensionally_separated_by_specified_character" />
+        <Parameter name="csv_syntax_is_valid" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(contents_contain_arrays=true) =&gt; (csv_syntax_is_valid = true)&#xD;&#xA; ">
+      <Parameters>
+        <Parameter name="contents_contain_arrays" />
+        <Parameter name="csv_syntax_is_valid" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(contents_contain_empty_objects=true) =&gt; (csv_syntax_is_valid = true)">
+      <Parameters>
+        <Parameter name="contents_contain_empty_objects" />
+        <Parameter name="csv_syntax_is_valid" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(contents_contain_nested_objects=true) =&gt; (csv_syntax_is_valid = true)">
+      <Parameters>
+        <Parameter name="contents_contain_nested_objects" />
+        <Parameter name="csv_syntax_is_valid" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(delimited_by_specified_character=true) =&gt; (csv_syntax_is_valid = true)">
+      <Parameters>
+        <Parameter name="delimited_by_specified_character" />
+        <Parameter name="csv_syntax_is_valid" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(dimensionally_separated_by_specified_character=true) =&gt; (csv_syntax_is_valid = true)">
+      <Parameters>
+        <Parameter name="dimensionally_separated_by_specified_character" />
+        <Parameter name="csv_syntax_is_valid" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="(contents_contain_empty_strings=true) =&gt; (csv_syntax_is_valid = true)">
+      <Parameters>
+        <Parameter name="contents_contain_empty_strings" />
+        <Parameter name="csv_syntax_is_valid" />
+      </Parameters>
+    </Constraint>
+    <Constraint text=" (contents_empty = true)=&gt; (input_file_size = &quot;none&quot;) &#xD;&#xA; ">
+      <Parameters>
+        <Parameter name="contents_empty" />
+        <Parameter name="input_file_size" />
+      </Parameters>
+    </Constraint>
+  </Constraints>
+  <Testset doi="2">
+    <Testcase TCNo="0">
+      <Value>1</Value>
+      <Value>plaintext</Value>
+      <Value>small</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>to_file</Value>
+      <Value>only_non_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="1">
+      <Value>2</Value>
+      <Value>plaintext</Value>
+      <Value>medium</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>to_command</Value>
+      <Value>contains_both</Value>
+    </Testcase>
+    <Testcase TCNo="2">
+      <Value>3</Value>
+      <Value>plaintext</Value>
+      <Value>large</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>to_standard_output</Value>
+      <Value>only_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="3">
+      <Value>4</Value>
+      <Value>plaintext</Value>
+      <Value>none</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>to_file</Value>
+      <Value>contains_both</Value>
+    </Testcase>
+    <Testcase TCNo="4">
+      <Value>5</Value>
+      <Value>non_plaintext</Value>
+      <Value>small</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>to_command</Value>
+      <Value>only_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="5">
+      <Value>6</Value>
+      <Value>non_plaintext</Value>
+      <Value>medium</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>to_standard_output</Value>
+      <Value>only_non_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="6">
+      <Value>7</Value>
+      <Value>non_plaintext</Value>
+      <Value>large</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>to_file</Value>
+      <Value>contains_both</Value>
+    </Testcase>
+    <Testcase TCNo="7">
+      <Value>8</Value>
+      <Value>non_plaintext</Value>
+      <Value>none</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>to_command</Value>
+      <Value>only_non_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="8">
+      <Value>9</Value>
+      <Value>multiple</Value>
+      <Value>small</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>to_standard_output</Value>
+      <Value>contains_both</Value>
+    </Testcase>
+    <Testcase TCNo="9">
+      <Value>10</Value>
+      <Value>multiple</Value>
+      <Value>medium</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>to_file</Value>
+      <Value>only_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="10">
+      <Value>11</Value>
+      <Value>multiple</Value>
+      <Value>large</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>to_command</Value>
+      <Value>only_non_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="11">
+      <Value>12</Value>
+      <Value>multiple</Value>
+      <Value>none</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>to_standard_output</Value>
+      <Value>only_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="12">
+      <Value>13</Value>
+      <Value>directory</Value>
+      <Value>small</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>to_file</Value>
+      <Value>only_non_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="13">
+      <Value>14</Value>
+      <Value>directory</Value>
+      <Value>medium</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>to_command</Value>
+      <Value>contains_both</Value>
+    </Testcase>
+    <Testcase TCNo="14">
+      <Value>15</Value>
+      <Value>directory</Value>
+      <Value>large</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>to_standard_output</Value>
+      <Value>only_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="15">
+      <Value>16</Value>
+      <Value>directory</Value>
+      <Value>none</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>to_command</Value>
+      <Value>only_non_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="16">
+      <Value>17</Value>
+      <Value>non_existent</Value>
+      <Value>none</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>to_file</Value>
+      <Value>only_non_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="17">
+      <Value>18</Value>
+      <Value>non_existent</Value>
+      <Value>none</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>to_standard_output</Value>
+      <Value>contains_both</Value>
+    </Testcase>
+    <Testcase TCNo="18">
+      <Value>19</Value>
+      <Value>non_existent</Value>
+      <Value>none</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>to_command</Value>
+      <Value>only_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="19">
+      <Value>20</Value>
+      <Value>multiple</Value>
+      <Value>small</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>to_file</Value>
+      <Value>only_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="20">
+      <Value>21</Value>
+      <Value>plaintext</Value>
+      <Value>large</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>to_standard_output</Value>
+      <Value>only_non_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="21">
+      <Value>22</Value>
+      <Value>plaintext</Value>
+      <Value>small</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>to_file</Value>
+      <Value>only_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="22">
+      <Value>23</Value>
+      <Value>plaintext</Value>
+      <Value>medium</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>to_file</Value>
+      <Value>only_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="23">
+      <Value>24</Value>
+      <Value>multiple</Value>
+      <Value>small</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>to_standard_output</Value>
+      <Value>only_ascii</Value>
+    </Testcase>
+    <Testcase TCNo="24">
+      <Value>25</Value>
+      <Value>plaintext</Value>
+      <Value>large</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>to_command</Value>
+      <Value>contains_both</Value>
+    </Testcase>
+  </Testset>
+  <Header>
+    <Value />
+    <Value>INPUT_FILE_TYPE</Value>
+    <Value>INPUT_FILE_SIZE</Value>
+    <Value>CSV_SYNTAX_IS_VALID</Value>
+    <Value>RECORDS_CONTAIN_SAME_NUMBER_OF_FIELDS</Value>
+    <Value>RECORD_CONTAINS_TRAILING_COMMA</Value>
+    <Value>RECORD_FIELD_CONTAINS_SPACE</Value>
+    <Value>RECORD_FIELD_ESCAPED</Value>
+    <Value>RECORD_FIELD_CONTAINS_COMMA</Value>
+    <Value>RECORD_FIELD_CONTAINS_NEW_LINE</Value>
+    <Value>RECORD_FIELD_CONTAINS_DOUBLE_QUOTES</Value>
+    <Value>CONTENTS_CONTAIN_ARRAYS</Value>
+    <Value>CONTENTS_CONTAIN_EMPTY_OBJECTS</Value>
+    <Value>CONTENTS_CONTAIN_EMPTY_STRINGS</Value>
+    <Value>CONTENTS_CONTAIN_NESTED_OBJECTS</Value>
+    <Value>DELIMITED_BY_SPECIFIED_CHARACTER</Value>
+    <Value>DIMENSIONALLY_SEPARATED_BY_SPECIFIED_CHARACTER</Value>
+    <Value>CONTENTS_EMPTY</Value>
+    <Value>ARRAYS_FLAG_SET</Value>
+    <Value>REMOVE_EMPTY_OBJECTS_FLAG_SET</Value>
+    <Value>REMOVE_EMPTY_STRINGS_FLAG_SET</Value>
+    <Value>OUTPUT_DIRECTORY_SPECIFIED</Value>
+    <Value>OUTPUT_TEMPLATE_NAME_SPECIFIED</Value>
+    <Value>DIMENSIONAL_SEPARATOR_SPECIFIED</Value>
+    <Value>DELIMITER_CHARACTER_SPECIFIED</Value>
+    <Value>BOOLEAN_COLUMNS_SPECIFIED</Value>
+    <Value>NUMERIC_COLUMNS_SPECIFIED</Value>
+    <Value>OUTPUT_REDIRECTED</Value>
+    <Value>RECORD_FIELD_DATA</Value>
+  </Header>
+  <Stat-Data>
+    <ExecutionTime>0.152</ExecutionTime>
+    <MaxDomainSize>5</MaxDomainSize>
+    <MinDomainSize>2</MinDomainSize>
+    <TotalNoOfCombination>1811</TotalNoOfCombination>
+    <TotalNoOfTests>25</TotalNoOfTests>
+    <Algorithm>IPOG</Algorithm>
+  </Stat-Data>
+</System>
+

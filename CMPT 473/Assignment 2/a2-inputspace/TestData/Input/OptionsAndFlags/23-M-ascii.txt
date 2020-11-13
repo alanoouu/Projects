@@ -1,0 +1,1 @@
+-D . -d : --remove-empty-objects --out-dir ./TestData/Output/Files --out-name '{header2}' --boolean header1Boolean

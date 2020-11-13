@@ -1,0 +1,1 @@
+--arrays --remove-empty-objects --remove-empty-strings -D 'DIR' --boolean 'nonExistantColumn' --out-dir ./TestData/Output/Files --out-name '{nonExistantColumn}'

@@ -1,0 +1,3 @@
+clang++ -g -fsanitize=address,fuzzer -I./include -I./ -I/usr/include/libxml2/ -Istfl -I/usr/include/ -L /usr/lib/x86_64-linux-gnu/ -lxml2 -L /usr/lib/ -lstfl -lcurl -lncursesw fuzztester.cpp  src/formatstring.cpp src/utils.cpp src/logger.cpp src/strprintf.cpp src/configcontainer.cpp src/configparser.cpp src/exception.cpp
+
+INFO: Seed: 3237406022
